@@ -1,0 +1,11 @@
+.mainContainer {
+  padding: 20px;
+  justify-items: auto;
+  display: flexbox;
+
+  flex-wrap: wrap;
+}
+.itemContainer {
+  margin: 15px;
+  overflow: hidden;
+}
