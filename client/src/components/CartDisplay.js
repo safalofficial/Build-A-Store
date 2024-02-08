@@ -82,6 +82,10 @@ const CartDisplay = () => {
       // console.log("After", tempArray);
     }
   };
+  const removeRow = (row) => {
+    var tempArray = cart.slice();
+    setCart(tempArray.filter((a) => a.item.Heading != row.desc));
+  };
   const invoiceSubtotal = subtotal(rows);
   const invoiceTaxes = GST * invoiceSubtotal;
   const invoiceTotal = invoiceTaxes + invoiceSubtotal;
@@ -101,7 +105,7 @@ const CartDisplay = () => {
               <TableCell>Desc</TableCell>
               <TableCell align="center">Qty.</TableCell>
               <TableCell align="right">Unit</TableCell>
-              <TableCell align="right">Sum</TableCell>
+              <TableCell align="center">Sum</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -141,24 +145,43 @@ const CartDisplay = () => {
                   </Button>
                 </TableCell>
                 <TableCell align="right">${row.unit}</TableCell>
-                <TableCell align="right">${ccyFormat(row.price)}</TableCell>
+                <TableCell align="right">
+                  ${ccyFormat(row.price)}{" "}
+                  <Button
+                    variant="outlined"
+                    color="error"
+                    style={{
+                      fontSize: 10,
+                      padding: 0,
+                      backgroundColor: "white",
+                      color: "red",
+                      marginLeft: 3,
+                      minWidth: 20,
+                    }}
+                    onClick={() => removeRow(row)}
+                  >
+                    x
+                  </Button>
+                </TableCell>
               </TableRow>
             ))}
             <TableRow>
               <TableCell rowSpan={3} />
               <TableCell colSpan={2}>Subtotal</TableCell>
-              <TableCell align="right">${ccyFormat(invoiceSubtotal)}</TableCell>
+              <TableCell align="center">
+                ${ccyFormat(invoiceSubtotal)}
+              </TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Tax</TableCell>
+              <TableCell>GST</TableCell>
               <TableCell align="right">{`${(GST * 100).toFixed(
                 0
               )} %`}</TableCell>
-              <TableCell align="right">${ccyFormat(invoiceTaxes)}</TableCell>
+              <TableCell align="center">${ccyFormat(invoiceTaxes)}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell colSpan={2}>Total</TableCell>
-              <TableCell align="right">${ccyFormat(invoiceTotal)}</TableCell>
+              <TableCell align="center">${ccyFormat(invoiceTotal)}</TableCell>
             </TableRow>
             <TableRow>
               <TableCell colSpan={2}>

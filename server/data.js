@@ -1984,5 +1984,57 @@ const categories = [
   { id: 9, name: "QSRs" },
   { id: 10, name: "MISC" },
   { id: 11, name: "Cables" },
+  { id: 12, name: "Licences" },
+];
+stores = [
+  {
+    id: 1,
+    name: "Standard SMGB",
+    software: [],
+    hardware: [
+      {
+        product: {
+          SKU: "1S11T3009VAU",
+          Desc: "Small POS PC for Adhoc needs",
+          Category: "POS",
+          Heading: "POS PC",
+          "Part Type": "Adhoc POS (Small Form Factor)",
+          "Unit Purpose": "Adhoc POS (Small Form Factor)",
+          "Model/Part Number": "1547303",
+          "Part Name": "Lenovo ThinkCentre M70q - i5, 16gb ram, 256gb SSD",
+          "Product Image": "image.png",
+          Wattage: "135",
+          "Product Price (ex GST)": "1306.67",
+          "Asset?": "",
+          "Primary Vendor": "Nuago",
+          "In Stock": "7",
+        },
+        quantity: 2,
+      },
+      {
+        product: {
+          SKU: "SCR-WB-DS",
+          Desc: "Customer facing screen for POS",
+          Category: "POS",
+          Heading: "POS Customer Facing Screen",
+          "Part Type": "POS - Customer Facing Screen",
+          "Unit Purpose": "Customer Facing Screen",
+          "Model/Part Number": "SCR.WB.DS",
+          "Part Name":
+            'Touch Screen Monitor 15.6" 1080P Touch Panel-Portrait view with 1 camera + metal back cover & AG coating',
+          "Product Image": "SCR.WB.DS.P.png",
+          Wattage: "24",
+          "Product Price (ex GST)": "1250",
+          "Asset?": "Yes",
+          "Primary Vendor": "Mitsumaru",
+          "In Stock": "76",
+        },
+        quantity: 2,
+      },
+    ],
+  },
+  {},
+  {},
+  {},
 ];
 module.exports = { products, categories };
