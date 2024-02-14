@@ -1,4 +1,4 @@
-const { products, categories } = require("./data");
+const { products, categories, stores } = require("./data");
 var express = require("express");
 // const filtered = data.filter(
 //   (item) => item["Part Name"] === "Microsoft Surface Dock Station"
@@ -15,6 +15,13 @@ app.use("/products", (req, res) => {
 app.use("/categories", (req, res) => {
   res.json(categories);
 });
+app.use("/categories", (req, res) => {
+  res.json(categories);
+});
+app.use(`/storeCart`, (req, res) => {
+  res.json(stores.filter((store) => store.id == req.query.id));
+});
+
 app.listen("7000", () => {
   console.log("listening on port 7000");
 });

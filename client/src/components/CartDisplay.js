@@ -91,7 +91,7 @@ const CartDisplay = () => {
   const invoiceTotal = invoiceTaxes + invoiceSubtotal;
 
   return (
-    <Grid minWidth={700} minHeight={500}>
+    <Grid minWidth={800} minHeight={500}>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 700 }} aria-label="spanning table">
           <TableHead>
